@@ -5,7 +5,7 @@ import House from './House'
 export default function Experience() {
 
     return <>
-        <Perf />
+        <Perf position="top-left" />
 
         <color args={['#030917']} attach="background" />
         <OrbitControls makeDefault />
