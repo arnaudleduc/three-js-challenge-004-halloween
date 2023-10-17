@@ -1,6 +1,7 @@
 import { OrbitControls } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
-import House from './House'
+import Base from './Base'
+import Trees from './Trees'
 
 export default function Experience() {
 
@@ -10,6 +11,7 @@ export default function Experience() {
         <color args={['#030917']} attach="background" />
         <OrbitControls makeDefault />
 
-        <House />
+        <Base />
+        <Trees />
     </>
 }

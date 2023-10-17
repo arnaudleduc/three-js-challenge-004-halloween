@@ -7,6 +7,7 @@ import Experience from './Experience'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Canvas
+      flat
       camera={ {
         fov: 45,
         near: 0.1,
