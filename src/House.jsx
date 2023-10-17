@@ -5,11 +5,16 @@ export default function House() {
     const {nodes} = useGLTF('./spookyHouse/models/house.glb')
     const emissive = useGLTF('./spookyHouse/models/emissive.glb')
     const emissiveGeometry = emissive.nodes.doorLight.geometry
-    console.log(emissiveGeometry);
+
+    const roof = useGLTF('./spookyHouse/models/roof.glb')
+    const roofGeometry = roof.nodes.sousToit2.geometry
 
     // Texture import
     const houseTexture = useTexture('./spookyHouse/textures/bakedHouse.jpg')
     houseTexture.flipY = false
+
+    const roofTexture = useTexture('./spookyHouse/textures/bakedRoof.jpg')
+    roofTexture.flipY = false
 
     return <>
         
@@ -25,6 +30,13 @@ export default function House() {
             position={emissive.nodes.doorLight.position} 
         >
             <meshBasicMaterial color={'#FF3800'} />
+        </mesh>
+
+        <mesh
+            geometry={roofGeometry}
+            position={roof.nodes.sousToit2.position} 
+        >
+            <meshBasicMaterial map={ roofTexture } />
         </mesh>
     </>
 }
