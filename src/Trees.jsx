@@ -4,7 +4,7 @@ export default function Trees() {
     // Model import
     const {nodes} = useGLTF('./spookyHouse/models/trees.glb')
     const treeGeometry = nodes.tree3.geometry
-    console.log(nodes);
+    
     //Texture import
     const treesTexture = useTexture('./spookyHouse/textures/bakedTrees.jpg')
     treesTexture.flipY = false

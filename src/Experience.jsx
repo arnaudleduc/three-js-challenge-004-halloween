@@ -2,6 +2,7 @@ import { OrbitControls } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import Base from './Base'
 import Trees from './Trees'
+import House from './House'
 
 export default function Experience() {
 
@@ -13,5 +14,6 @@ export default function Experience() {
 
         <Base />
         <Trees />
+        <House />
     </>
 }
