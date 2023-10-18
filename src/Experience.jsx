@@ -15,9 +15,9 @@ export default function Experience() {
         <color args={['#030917']} attach="background" />
         {/* <gridHelper /> */}
         <OrbitControls
-            minDistance={10}
-            maxDistance={25}
-            maxPolarAngle={(Math.PI / 2) - 0.1}
+            // minDistance={10}
+            // maxDistance={25}
+            // maxPolarAngle={(Math.PI / 2) - 0.1}
         />
 
         <Base />
