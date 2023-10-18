@@ -19,8 +19,8 @@ export default function House() {
     return <>
         
         <mesh
-            geometry={ nodes.facade1.geometry}
-            position={ nodes.facade1.position}    
+            geometry={nodes.facade1.geometry}
+            position={nodes.facade1.position}    
         >
             <meshBasicMaterial map={ houseTexture } />
         </mesh>

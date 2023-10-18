@@ -7,7 +7,6 @@ import Experience from './Experience'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Suspense>
       <Canvas
         flat
         camera={ {
@@ -20,7 +19,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <fog attach="fog" args={['#030917', 0.1, 40]} />
         <Experience />
       </Canvas>
-    </Suspense>
-    
   </React.StrictMode>
 )

@@ -6,6 +6,7 @@ import House from './House'
 import Bats from './Bats'
 import Haze from './Haze'
 import Floor from './Floor'
+import Secrets from './Secrets'
 
 export default function Experience() {
 
@@ -25,5 +26,6 @@ export default function Experience() {
         <Bats />
         <Haze />
         <Floor />
+        <Secrets />
     </>
 }

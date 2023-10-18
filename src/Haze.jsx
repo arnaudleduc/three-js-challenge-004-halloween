@@ -5,7 +5,9 @@ import * as THREE from 'three'
 
 export default function Haze() {
     const haze = useRef()
-    console.log(haze);
+    const [hazeGrowth] = useState(() => (
+       Math.round((Math.random() * 8) + 1)
+    ), [])
 
     useFrame((state) => {
         const time = state.clock.getElapsedTime()
@@ -25,18 +27,11 @@ export default function Haze() {
                 concentrate='inside'
                 volume={25}
                 color="white"
-                opacity={ 0.1 }
+                opacity={ 0.05 }
                 position={[0, 0, 0]}
                 fade={100}
-                growth={2}
+                growth={1 + hazeGrowth}
             />
-            {/* <Cloud
-                seed={1}
-                scale={2}
-                volume={5}
-                color="hotpink"
-                fade={100}
-            /> */}
         </Clouds>
     </>
 }
