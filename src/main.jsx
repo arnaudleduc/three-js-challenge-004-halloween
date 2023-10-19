@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client'
 import { Canvas } from '@react-three/fiber'
 import { Suspense } from 'react'
 import Experience from './Experience'
+import Interface from './Interface'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -19,5 +20,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <fog attach="fog" args={['#030917', 0.1, 40]} />
         <Experience />
       </Canvas>
+      <Interface />
   </React.StrictMode>
 )

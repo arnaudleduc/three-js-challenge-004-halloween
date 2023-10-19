@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { OrbitControls, Sparkles, Text } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
@@ -9,11 +9,10 @@ import Bats from './Bats'
 import Haze from './Haze'
 import Floor from './Floor'
 import Secrets from './Secrets'
-import { Group } from 'three'
 
 export default function Experience() {
     const [showTitle, setShowTitle] = useState(true)
-
+    
     useFrame((state) => {
         setShowTitle(!(state.camera.position.x < 17))
     })
@@ -36,6 +35,7 @@ export default function Experience() {
                 font='./fonts/creepsterFont.woff'
                 fontSize={2}
                 maxWidth={15}
+                lineHeight={0.9}
                 textAlign='right'
                 color={'#fc8914'}
             >
@@ -44,7 +44,7 @@ export default function Experience() {
             <Text
                 font='./fonts/creepsterFont.woff'
                 fontSize={0.5}
-                position={[4.6, -2.6, 0]}
+                position={[4.6, -2.3, 0]}
                 maxWidth={15}
                 textAlign='right'
                 color={'#fc8914'}
