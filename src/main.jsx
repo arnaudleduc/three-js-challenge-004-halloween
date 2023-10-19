@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         camera={{
           fov: 50,
           near: 0.1,
-          far: 35,
+          far: 30,
           position: [28, 20, 28]
         }}
       >

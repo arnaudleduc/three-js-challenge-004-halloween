@@ -1,3 +1,5 @@
+import { useRef, useState } from 'react'
+import { useFrame } from '@react-three/fiber'
 import { OrbitControls, Sparkles, Text } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import Base from './Base'
@@ -7,8 +9,15 @@ import Bats from './Bats'
 import Haze from './Haze'
 import Floor from './Floor'
 import Secrets from './Secrets'
+import { Group } from 'three'
 
 export default function Experience() {
+    const [showTitle, setShowTitle] = useState(true)
+
+    useFrame((state) => {
+        setShowTitle(!(state.camera.position.x < 17))
+    })
+
     return <>
         <Perf position="top-left" />
         <color args={['#030917']} attach="background" />
@@ -18,27 +27,32 @@ export default function Experience() {
             maxDistance={45}
             // maxPolarAngle={(Math.PI / 2) - 0.1}
         />
-
-        <Text
-            font='./fonts/creepsterFont.woff'
-            fontSize={2}
+        <group
             position={[20, 16, 20]}
             rotation-y={-(Math.PI) * 1.85}
-            maxWidth={15}
-            textAlign='right'
+            visible={showTitle}
         >
-            (Not so) Abandonned House
-        </Text>
-        <Text
-            font='./fonts/creepsterFont.woff'
-            fontSize={0.5}
-            position={[24.5, 13.5, 18]}
-            rotation-y={-(Math.PI) * 1.85}
-            maxWidth={15}
-            textAlign='right'
-        >
-            Scroll and find the gems !
-        </Text>
+            <Text
+                font='./fonts/creepsterFont.woff'
+                fontSize={2}
+                maxWidth={15}
+                textAlign='right'
+                color={'#fc8914'}
+            >
+                (Not so) Abandonned House
+            </Text>
+            <Text
+                font='./fonts/creepsterFont.woff'
+                fontSize={0.5}
+                position={[4.6, -2.6, 0]}
+                maxWidth={15}
+                textAlign='right'
+                color={'#fc8914'}
+            >
+                Scroll up and find the gems !
+            </Text>
+        </group>
+        
         <Base />
         <Trees />
         <House />
