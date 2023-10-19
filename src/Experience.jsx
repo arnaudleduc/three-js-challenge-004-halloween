@@ -39,7 +39,7 @@ export default function Experience() {
                 textAlign='right'
                 color={'#fc8914'}
             >
-                (Not so) Abandonned House
+                (Not so) Abandoned House
             </Text>
             <Text
                 font='./fonts/creepsterFont.woff'
