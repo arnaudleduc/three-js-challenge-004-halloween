@@ -6,7 +6,7 @@ export default function Base() {
     const baseGeometry = base.nodes.floor.geometry
 
     // Texture import
-    const baseTexture = useTexture('./spookyHouse/textures/bakedBase.jpg')
+    const baseTexture = useTexture('./spookyHouse/textures/HQ/bakedBase.jpg')
     baseTexture.flipY = false
 
     return <>

@@ -6,7 +6,7 @@ export default function Trees() {
     const treeGeometry = nodes.tree3.geometry
     
     //Texture import
-    const treesTexture = useTexture('./spookyHouse/textures/bakedTrees.jpg')
+    const treesTexture = useTexture('./spookyHouse/textures/HQ/bakedTrees.jpg')
     treesTexture.flipY = false
 
     return <>

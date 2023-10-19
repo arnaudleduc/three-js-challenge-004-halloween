@@ -10,10 +10,10 @@ export default function House() {
     const roofGeometry = roof.nodes.sousToit2.geometry
 
     // Texture import
-    const houseTexture = useTexture('./spookyHouse/textures/bakedHouse.jpg')
+    const houseTexture = useTexture('./spookyHouse/textures/HQ/bakedHouse.jpg')
     houseTexture.flipY = false
 
-    const roofTexture = useTexture('./spookyHouse/textures/bakedRoof.jpg')
+    const roofTexture = useTexture('./spookyHouse/textures/HQ/bakedRoof.jpg')
     roofTexture.flipY = false
 
     return <>
@@ -29,7 +29,7 @@ export default function House() {
             geometry={emissiveGeometry}
             position={emissive.nodes.doorLight.position} 
         >
-            <meshBasicMaterial color={'#FF3800'} />
+            <meshBasicMaterial color={'#fc8914'} />
         </mesh>
 
         <mesh

@@ -9,12 +9,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <Canvas
         flat
-        camera={ {
-          fov: 45,
+        camera={{
+          fov: 50,
           near: 0.1,
-          far: 200,
-          position: [ 15, 15, 15 ]
-        } }
+          far: 35,
+          position: [28, 20, 28]
+        }}
       >
         <fog attach="fog" args={['#030917', 0.1, 40]} />
         <Experience />
