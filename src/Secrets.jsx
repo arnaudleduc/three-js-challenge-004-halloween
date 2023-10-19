@@ -49,7 +49,7 @@ export default function Secrets() {
                 position={gemNumber.nodes[gemIndex].position}
                 onClick={() => onGemClick(index)}
             >
-                <meshBasicMaterial color={'#ffffff'} />
+                <meshBasicMaterial color={'#020417'} />
             </mesh>
         })}
     </>

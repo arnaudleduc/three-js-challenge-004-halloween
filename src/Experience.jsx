@@ -22,9 +22,9 @@ export default function Experience() {
         <color args={['#030917']} attach="background" />
         {/* <gridHelper /> */}
         <OrbitControls
-            // minDistance={10}
+            minDistance={10}
             maxDistance={45}
-            // maxPolarAngle={(Math.PI / 2) - 0.1}
+            maxPolarAngle={(Math.PI / 2) - 0.1}
         />
         <group
             position={[20, 16, 20]}
