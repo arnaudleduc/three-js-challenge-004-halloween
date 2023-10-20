@@ -11,14 +11,16 @@ export default function Bats() {
         action.play()
     }, [])
 
-    return <>
-        <Float
-            floatIntensity={2}
-        >
-            <primitive
-                object={bat.scene}
-                position={bat.scene.position}
-            />
-        </Float>    
-    </>
+    return (
+        <>
+            <Float
+                floatIntensity={2}
+            >
+                <primitive
+                    object={bat.scene}
+                    position={bat.scene.position}
+                />
+            </Float>
+        </>
+    )
 }

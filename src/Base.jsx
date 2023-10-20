@@ -9,12 +9,14 @@ export default function Base() {
     const baseTexture = useTexture('./spookyHouse/textures/HQ/bakedBase.jpg')
     baseTexture.flipY = false
 
-    return <>
-        <mesh
-            geometry={ baseGeometry }
-            position={ base.nodes.floor.position}
-        >
-            <meshBasicMaterial map={ baseTexture } />
-        </mesh>
-    </>
+    return (
+        <>
+            <mesh
+                geometry={baseGeometry}
+                position={base.nodes.floor.position}
+            >
+                <meshBasicMaterial map={baseTexture} />
+            </mesh>
+        </>
+    )
 }

@@ -1,4 +1,4 @@
-import {create} from 'zustand'
+import { create } from 'zustand'
 
 const useGemsStore = create((set) => ({
         /**
@@ -7,7 +7,7 @@ const useGemsStore = create((set) => ({
         gemCount: 0,
         increaseGemCount: () => set((state) => ({ gemCount: state.gemCount + 1 })),
         watchScene: true,
-        hidePostGameInterface: () => set((state) => ({ watchScene: false}))
+        hidePostGameInterface: () => set(() => ({ watchScene: false })),
 }))
 
 export default useGemsStore

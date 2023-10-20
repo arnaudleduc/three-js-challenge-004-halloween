@@ -4,7 +4,7 @@ import { useFrame } from "@react-three/fiber"
 import * as THREE from 'three'
 import useGemsStore from "./stores/useGems"
 
-export default function Secrets() {
+export default function Gems() {
     const gemsRef = useRef([])
 
     const { increaseGemCount } = useGemsStore()
@@ -39,18 +39,20 @@ export default function Secrets() {
         }
     }
 
-    return <>
-        {gemsModel.map((gemNumber, index) => {
-            const gemIndex = index === 0 ? 'gem' : `gem00${index}`
-            return <mesh
-                key={`gem-${index + 1}`}
-                ref={element => gemsRef.current[index] = element}
-                geometry={gemNumber.nodes[gemIndex].geometry}
-                position={gemNumber.nodes[gemIndex].position}
-                onClick={() => onGemClick(index)}
-            >
-                <meshBasicMaterial color={'#020417'} />
-            </mesh>
-        })}
-    </>
+    return (
+        <>
+            {gemsModel.map((gemNumber, index) => {
+                const gemIndex = index === 0 ? 'gem' : `gem00${index}`
+                return <mesh
+                    key={`gem-${index + 1}`}
+                    ref={element => gemsRef.current[index] = element}
+                    geometry={gemNumber.nodes[gemIndex].geometry}
+                    position={gemNumber.nodes[gemIndex].position}
+                    onClick={() => onGemClick(index)}
+                >
+                    <meshBasicMaterial color={'#020417'} />
+                </mesh>
+            })}
+        </>
+    )
 }
