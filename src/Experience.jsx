@@ -32,6 +32,8 @@ export default function Experience() {
                 minDistance={10}
                 maxDistance={45}
                 maxPolarAngle={(Math.PI / 2) - 0.1}
+                enablePan={false}
+                target={[0, 3, 0]}
             />
             <group
                 position={[20, 16, 20]}
