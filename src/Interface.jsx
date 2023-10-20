@@ -37,17 +37,17 @@ export default function Interface() {
                     Don't want to miss the next project ? Follow me !
                 </p>
                 <div className="interface-post-game-icon-container">
-                    <a href="https://github.com/arnaudleduc">
+                    <a href="https://github.com/arnaudleduc" target="_blank">
                         <img className="interface-post-game-icon" src="./icons/github_orange.png" alt="github icon" />
                     </a>
-                    <a href="https://www.linkedin.com/in/arnaudleduc/">
+                    <a href="https://www.linkedin.com/in/arnaudleduc/" target="_blank">
                         <img className="interface-post-game-icon" src="./icons/linkedin_orange.png" alt="linkedin icon" />
                     </a>
                 </div>
                 <p className="interface-post-game-sentence">
                     Want to become a three.js developper ? Click below !
                 </p>
-                <a href="https://threejs-journey.com/">
+                <a href="https://threejs-journey.com/" target="_blank">
                     <img className="interface-post-game-icon" src="./icons/three_orange.png" alt="github icon" />
                 </a>
                 <div className="interface-post-game-buttons-container">
