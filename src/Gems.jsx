@@ -3,10 +3,13 @@ import { useGLTF } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber"
 import * as THREE from 'three'
 import useGemsStore from "./stores/useGems"
+import useSoundsStore from "./stores/useSounds"
+
+const gemSound = new Audio('./sounds/gem_sound.mp3')
 
 export default function Gems() {
     const gemsRef = useRef([])
-
+    const { isSoundOn } = useSoundsStore()
     const { increaseGemCount } = useGemsStore()
 
     // Model import
@@ -35,6 +38,8 @@ export default function Gems() {
     const onGemClick = (index) => {
         if (gemsRef.current[index].visible) {
             increaseGemCount()
+            if (isSoundOn)
+                gemSound.play()
             gemsRef.current[index].visible = false
         }
     }
@@ -43,15 +48,17 @@ export default function Gems() {
         <>
             {gemsModel.map((gemNumber, index) => {
                 const gemIndex = index === 0 ? 'gem' : `gem00${index}`
-                return <mesh
-                    key={`gem-${index + 1}`}
-                    ref={element => gemsRef.current[index] = element}
-                    geometry={gemNumber.nodes[gemIndex].geometry}
-                    position={gemNumber.nodes[gemIndex].position}
-                    onClick={() => onGemClick(index)}
-                >
-                    <meshBasicMaterial color={'#020417'} />
-                </mesh>
+                return (
+                    <mesh
+                        key={`gem-${index + 1}`}
+                        ref={element => gemsRef.current[index] = element}
+                        geometry={gemNumber.nodes[gemIndex].geometry}
+                        position={gemNumber.nodes[gemIndex].position}
+                        onClick={() => onGemClick(index)}
+                    >
+                        <meshBasicMaterial color={'#03171c'} />
+                    </mesh>
+                )
             })}
         </>
     )

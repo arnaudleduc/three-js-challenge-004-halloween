@@ -28,6 +28,11 @@ body,
     bottom: 0;
     left: 1%;
     color: #fc8914;
+    user-select: none;
+    
+    @media screen and (max-width: 767px) {
+        left: 5%;
+    }
 }
 
 .interface-sound {
@@ -38,11 +43,18 @@ body,
     border-radius: 50%;
     pointer-events: auto;
     cursor: pointer;
+    user-select: none;
+    @media screen and (max-width: 767px) {
+        right: 5%;
+    }
 }
 
 .interface-sound-icon {
     height: 30px;
     margin: 10px;
+    @media screen and (max-width: 767px) {
+        height: 20px;
+    }
 }
 
 .interface-gems-counter {
@@ -56,6 +68,11 @@ body,
     padding: 20px;
     text-align: right;
     user-select: none;
+
+    @media screen and (max-width: 767px) {
+        width: 100%;
+        font-size: 4vh;
+    }
 }
 
 .interface-post-game {
@@ -66,15 +83,25 @@ body,
     background: rgba(39, 44, 56, 0.7);
     text-align: center;
     padding-bottom: 12px;
+
+    @media screen and (max-width: 767px) {
+        top: 20%;
+    }
 }
 
 .interface-post-game-title {
     font-size: 12vh;
     margin: 5px;
+    @media screen and (max-width: 767px) {
+        font-size: 6vh;
+    }
 }
 
 .interface-post-game-sentence {
     font-size: 4vh;
+    @media screen and (max-width: 767px) {
+        font-size: 3vh;
+    }
 }
 
 .interface-post-game-link {

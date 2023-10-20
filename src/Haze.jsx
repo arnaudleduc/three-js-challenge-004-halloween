@@ -31,7 +31,6 @@ export default function Haze() {
                     opacity={0.05}
                     position={[0, 0, 0]}
                     fade={100}
-                    growth={1 + hazeGrowth}
                 />
             </Clouds>
         </>

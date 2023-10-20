@@ -17,7 +17,6 @@ export default function Interface() {
 
     const toggleSoundOnOff = () => {
         toggleSounds()
-        console.log(isSoundOn);
     }
 
     return (

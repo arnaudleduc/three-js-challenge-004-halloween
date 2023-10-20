@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { OrbitControls, Sparkles, Text, Html } from '@react-three/drei'
 // import { Perf } from 'r3f-perf'
@@ -17,6 +17,12 @@ export default function Experience() {
         setShowTitle(!(state.camera.position.x < 17))
     })
 
+    const haze = useMemo(() => <Haze />, [])
+    const screenWidth = window.innerWidth < 768 ? 1 : 2
+    const textWidth = useMemo(() => window.innerWidth < 768 ? 5 : 15, [window.innerWidth])
+    const subTextPosition = useMemo(() => window.innerWidth < 768 ? [0, -2.3, 0] : [4.6, -2.3, 0], [window.innerWidth])
+    const instructionsText = useMemo(() => window.innerWidth < 768 ? 'Zoom in' : 'Scroll Up', [window.innerWidth])
+
     return (
         <>
             {/* <Perf position="top-left" /> */}
@@ -34,8 +40,8 @@ export default function Experience() {
             >
                 <Text
                     font='./fonts/creepsterFont.woff'
-                    fontSize={2}
-                    maxWidth={15}
+                    fontSize={screenWidth}
+                    maxWidth={textWidth}
                     lineHeight={0.9}
                     textAlign='right'
                     color={'#fc8914'}
@@ -45,12 +51,12 @@ export default function Experience() {
                 <Text
                     font='./fonts/creepsterFont.woff'
                     fontSize={0.5}
-                    position={[4.6, -2.3, 0]}
-                    maxWidth={15}
+                    position={subTextPosition}
+                    maxWidth={textWidth}
                     textAlign='right'
                     color={'#fc8914'}
                 >
-                    Scroll up and find the gems !
+                    {instructionsText} and find the gems !
                 </Text>
             </group>
 
@@ -58,7 +64,7 @@ export default function Experience() {
             <Trees />
             <House />
             <Bats />
-            <Haze />
+            {haze}
             <Floor />
             <Gems />
             <Sparkles
