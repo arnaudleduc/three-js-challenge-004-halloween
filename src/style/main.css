@@ -163,7 +163,13 @@ body,
     padding-right: 10px;
     font-family: Creepster, cursive;
     color: #fc8914;
-    font-size: 3vh
+    font-size: 3vh;
+
+    @media screen and (max-width: 767px) {
+        right: 0%;
+        left: 5%;
+        bottom: 5%;
+    }
 }
 
 /**
